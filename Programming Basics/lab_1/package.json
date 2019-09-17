@@ -1,0 +1,13 @@
+{
+  "name": "lab01-it92-valik",
+  "version": "0.0.1",
+  "description": "that's a completely generic lab...",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"I'm cool\""
+  },
+  "author": "Lir0sis",
+  "license": "ISC",
+  "dependencies": {}
+}
