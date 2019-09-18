@@ -1,3 +1,2 @@
 # labs
-### by Valentine Shenfeld 
-### IT-92
+### by Valentine Shenfeld form IT-92
