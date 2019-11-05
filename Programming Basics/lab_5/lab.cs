@@ -14,7 +14,7 @@ namespace lab_5
                 float FinXmax = 0f, FinXmin = 0f;
 
                 Console.WriteLine("Лабораторна №5, завдання 1.25");
-                Console.WriteLine("Введіть кількість відрізків");
+                Console.WriteLine("Введіть кількість відрізків (N>1)");
 
                 while (true)
                 {
@@ -22,6 +22,7 @@ namespace lab_5
                     try
                     {
                         Number = int.Parse(Console.ReadLine());
+                        if (Number == 1) throw new Exception();
                     }
                     catch
                     {
@@ -89,9 +90,14 @@ namespace lab_5
                         Continue = true;
                     else if (Key == ConsoleKey.N)
                         Continue = false;
-                    else continue;
+                    else 
+                    {
+                        Console.Clear();
+                        continue;
+                    }
                     break;
                 }
+                    
                 if (Continue == false)
                     break;
                 
