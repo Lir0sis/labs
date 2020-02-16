@@ -7,8 +7,20 @@ namespace lab_7
         static void Main(string[] args)
         {
             int count = 0;
-            Console.Write("n = ");
-            int size = int.Parse(Console.ReadLine());
+            int size;
+            while (true) 
+            {
+                try
+                {
+                    Console.Write("n = ");
+                    size = int.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    continue;
+                }
+                break;
+            }
             int[,] arr = new int[size, size];
             int sum = 0;
 
