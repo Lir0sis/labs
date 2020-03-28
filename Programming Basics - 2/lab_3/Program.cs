@@ -9,7 +9,7 @@ namespace lab_3
     class Program
     {
         static Random rand = new Random(DateTime.Now.Millisecond);
-        static readonly int size = 20;
+        static readonly int size = 3;
 
         static void Main(string[] args)
         {
@@ -72,13 +72,14 @@ namespace lab_3
             ShowList(strings, 2);
 
             Console.Read();
-            var chars = from key in strings
-                    where isAccessible(key)
-                    select (key.Length % 2 == 0 ? key[0] : key[key.Length - 1]);
+            var chars = from keyString in strings
+                        where isAccessible(keyString)
+                        from keyChar in keyString
+                        where keyString.Length % 2 == 0 ? keyChar == keyString[0] : keyChar == keyString[keyString.Length - 1]
+                        orderby Convert.ToInt32(keyChar)
+                        select keyChar;
 
-            var sortedChars = chars.OrderBy(key => (int)key);
-
-            foreach (var key in sortedChars)
+            foreach (var key in chars)
                 Console.Write(key + " ");
 
             #endregion
